@@ -7,7 +7,7 @@
 官方定义：加载一系列的Drawable，一个接着另一个，组成动画
 
 xml:
-<animation-list>
+``` <animation-list> ```
 item 元素的android:duration属性设置播放的时间，单位为毫秒(ms)
 
 java:
@@ -17,7 +17,7 @@ android.graphics.drawable.AnimationDrawable
 官方定义：使用视图动画系统（view animation system）执行View的补间动画。补间通过计算start point, end point, size, rotation的信息执行动画
 
 xml:
-<alpha>, <scale>, <translate>, <rotate>,<set>
+``` <alpha>, <scale>, <translate>, <rotate>,<set> ```
 
 java:
 android.view.animation.AnimationSet,android.view.animation.Animation
