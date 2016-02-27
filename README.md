@@ -46,7 +46,7 @@ app
 | | | | |____androidanimation
 | | | | | |____AnimationActivity.java 
 | | | | | |____animation
-| | | | | | |____(AnimationFactory.java)[https://github.com/rickgit/animation/blob/master/app/src/main/java/edu/ptu/androidanimation/animation/AnimationFactory.java] 抽象工程可以返回ViewAnimation,AnimationDrawable,Animator动画类
+| | | | | | |____[AnimationFactory.java](https://github.com/rickgit/animation/blob/master/app/src/main/java/edu/ptu/androidanimation/animation/AnimationFactory.java) 抽象工程可以返回ViewAnimation,AnimationDrawable,Animator动画类
 | |____AndroidManifest.xml
 | |____res
 | | |____drawable
