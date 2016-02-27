@@ -34,3 +34,36 @@ Frame refresh delay：刷新的时间，默认10ms
 通过指定一系列类型（int, float, or color）的值，使这些类型的值动态变动
 ####ObjectAnimator
 ObjectAnimator是ValueAnimator的子类，包含分时引擎和动画值计算，使目标对象的相应属性产生动画变动
+
+
+##类结构
+app
+|____main
+| |____java
+| | |____edu
+| | | |____ptu
+| | | | |____androidanimation
+| | | | | |____AnimationActivity.java 
+| | | | | |____animation
+| | | | | | |____AnimationFactory.java 抽象工程可以返回ViewAnimation,AnimationDrawable,Animator动画类
+| |____AndroidManifest.xml
+| |____res
+| | |____drawable
+| | | |____ic_launcher.png
+| | |____mipmap-xhdpi
+| | | |____ic_launcher.png
+| | |____values
+| | | |____styles.xml
+| | | |____strings.xml
+| | | |____dimens.xml
+| | |____menu
+| | | |____menu_animation.xml
+| | |____layout
+| | | |____activity_animation.xml
+| | |____anim
+|____androidTest
+| |____java
+| | |____edu
+| | | |____ptu
+| | | | |____androidanimation
+| | | | | |____ApplicationTest.java
