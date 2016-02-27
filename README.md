@@ -56,20 +56,24 @@ IntPropertyValuesHolder继承了PropertyValuesHolder，构造方法调用父类�
 在Animator里只有ofApla方法和ofObject有用到，该方法根据设置mValues第一个元素PropertyValuesHolder的android.animation.PropertyValuesHolder#mEvaluator属性和步骤2.1的KeyframeSet的android.animation.KeyframeSet#mEvaluator属性。
 
 #####启动ObjectAnimator动画
-######1.android.animation.ObjectAnimator#start方法
+1.android.animation.ObjectAnimator#start方法
 从android.animation.ValueAnimator#sAnimationHandler（java.lang.ThreadLocal）调用一个android.animation.ValueAnimator.Animatorndler（android.animation.ValueAnimator.AnimatorHandler）的类型的对象，保证每个线程有个对应的AnimationHandler，Animatiorndler用来循环动画的类。<br/>
 如果没从ThreadLocal获取到AnimationHandler，则android.animation.ValueAnimator#start()。<br/>
 如果有，则取消AnimatorHandler里面的所有Animator（android.animation.ValueAnimator.AnimationHandler#mAnimations，android.animation.ValueAnimator.AnimationHandler#mPendingAnimations，android.animation.ValueAnimator.AnimationHandler#mDelayedAnims）动画执行，调用Animator的cancel方法
 
 接着调用android.animation.ValueAnimator#start()，方法里面只调用了方法，start(false)。这个方法初始化和启动android.animation.ValueAnimator.AnimationHandler start方法。
 
-android.animation.ValueAnimator.AnimationHandler#scheduleAnimation调用android.animation.ValueAnimator.AnimationHandler#mChoreographer#postCallback方法。android.animation.ValueAnimator.AnimationHandler#doAnimationFrame,通知界面android.animation.ValueAnimator#startAnimation
-1.该方法执行android.animation.ValueAnimator.AnimationHandler#mPendingAnimations的所有动画，
-2.如果没有延迟执行startAnimation，否则加入的android.animation.ValueAnimator.AnimationHandler#mDelayedAnims里面。
-3.接着遍历延迟动画列表，将可以准备好执行的动画加入mReadyAnims，并开始执行mReadyAnims的animstor,清空相关的延迟animator数据。
-4.遍历所有激活的动画，判断是否结束（android.animation.ValueAnimator#doAnimationFrame方法判断是否结束动画），并把结束的animator做处理，处理为于android.animation.ValueAnimator#endAnimation方法，并将改animator移除AnimatorHandler，发送通知android.animation.Animator.AnimatorListener#onAnimationEnd
-5.调用android.animation.ValueAnimator.AnimationHandler#commitAnimationFrame，调用激活的animator的commitAnimationFrame方法
+android.animation.ValueAnimator.AnimationHandler#scheduleAnimation调用android.animation.ValueAnimator.AnimationHandler#mChoreographer#postCallback方法。android.animation.ValueAnimator.AnimationHandler#doAnimationFrame,通知界面android.animation.ValueAnimator#startAnimation<br/>
+1.该方法执行android.animation.ValueAnimator.AnimationHandler#mPendingAnimations的所有动画;<br/>
+2.如果没有延迟执行startAnimation，否则加入的android.animation.ValueAnimator.AnimationHandler#mDelayedAnims里面。<br/>
+3.接着遍历延迟动画列表，将可以准备好执行的动画加入mReadyAnims，并开始执行mReadyAnims的animstor,清空相关的延迟animator数据。<br/>
+4.遍历所有激活的动画，判断是否结束（android.animation.ValueAnimator#doAnimationFrame方法判断是否结束动画），并把结束的animator做处理，处理为于android.animation.ValueAnimator#endAnimation方法，并将改animator移除AnimatorHandler，发送通知android.animation.Animator.AnimatorListener#onAnimationEnd<br/>
+5.调用android.animation.ValueAnimator.AnimationHandler#commitAnimationFrame，调用激活的animator的commitAnimationFrame方法<br/>
 6.如果有animator未执行，则继续调用scheduleAnimation方法。
+
+#####取消ObjectAnimator动画
+android.animation.ValueAnimator#cancel，如果没有启动的animator，先执行android.animation.Animator.AnimatorListener#onAnimationStart方法，然后发送通知给监听对象android.animation.Animator.AnimatorListener#onAnimationCancel，最后android.animation.ValueAnimator#endAnimation，清除当前AnimatorHandler的所有动画信息。
+
 ##案例结构
 [AnimationFactory.java](https://github.com/rickgit/animation/blob/master/app/src/main/java/edu/ptu/androidanimation/animation/AnimationFactory.java)
 ```
