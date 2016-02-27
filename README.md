@@ -37,6 +37,7 @@ ObjectAnimator是ValueAnimator的子类，包含分时引擎和动画值计算�
 
 
 ##类结构
+<pre>
 app
 |____main
 | |____java
@@ -67,3 +68,4 @@ app
 | | | |____ptu
 | | | | |____androidanimation
 | | | | | |____ApplicationTest.java
+</pre>
