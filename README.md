@@ -265,6 +265,7 @@ android.view.animation.AlphaAnimation#applyTransformation
 
 ###属性动画(PropertyAnimation Android 3.0,API level 11)
 官方定义：通过一段时间改变任何Object的属性形成动画
+TODO 插值器（Interpolator）和估值器（TypeEvaluator）分析
 ```
 java:
 android.animation.ObjectAnimator
