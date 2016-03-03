@@ -481,6 +481,8 @@ android.animation.ValueAnimator.AnimationHandler#scheduleAnimation调用android.
 #####取消ObjectAnimator动画
 android.animation.ValueAnimator#cancel，如果没有启动的animator，先执行android.animation.Animator.AnimatorListener#onAnimationStart方法，然后发送通知给监听对象android.animation.Animator.AnimatorListener#onAnimationCancel，最后android.animation.ValueAnimator#endAnimation，清除当前AnimatorHandler的所有动画信息。
 
+##Android 3D动画
+###android.graphics.Camera
 
 ##案例结构
 [AnimationFactory.java](https://github.com/rickgit/animation/blob/master/app/src/main/java/edu/ptu/androidanimation/animation/AnimationFactory.java)
