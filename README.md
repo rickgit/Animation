@@ -104,11 +104,19 @@ setFrame可以看，步骤2的分析。调用了android.graphics.drawable.Drawab
 官方定义：使用视图动画系统（view animation system）执行View的补间动画。补间通过计算start point, end point, size, rotation的信息执行动画
 
 xml:
-``` <alpha>, <scale>, <translate>, <rotate>,<set> ```
+``` 
+    <alpha>, <scale>, <translate>, <rotate>,<set>
+
+    <layoutAnimation xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:animation="@anim/list_item_alpha" 
+    android:animationOrder="normal" 
+    android:delay="0.8" />
+
+```
 
 java:
-android.view.animation.AnimationSet, android.view.animation.Animation, ,android.view.animation.AnimationUtils
-
+android.view.animation.AnimationSet, android.view.animation.Animation, android.view.animation.AnimationUtils,<br/>
+android.view.animation.LayoutAnimationController 实现使多个控件按顺序一个一个的显示。
 ####Animation源码分析
 android.view.animation.Animation<br/>
 1. AlphaAnimation构造方法
