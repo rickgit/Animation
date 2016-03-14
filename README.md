@@ -396,6 +396,42 @@ IntPropertyValuesHolder继承了PropertyValuesHolder，构造方法调用父类�
         }
     }
 ```
+在super.animateValue(fraction);时候获取值
+```java
+    //android.animation.ValueAnimator#animateValue
+    void animateValue(float fraction) {
+        fraction = mInterpolator.getInterpolation(fraction);
+        mCurrentFraction = fraction;
+        int numValues = mValues.length;
+        for (int i = 0; i < numValues; ++i) {
+            mValues[i].calculateValue(fraction);
+        }
+        if (mUpdateListeners != null) {
+            int numListeners = mUpdateListeners.size();
+            for (int i = 0; i < numListeners; ++i) {
+                mUpdateListeners.get(i).onAnimationUpdate(this);
+            }
+        }
+    }
+
+```
+mValues[i].calculateValue(fraction);最总执行KeyFrameSet通过估值器获取值,参数fraction是通过插值器(时间分数=执行的时间/总时间)
+```java
+    //android.animation.KeyframeSet#getValue
+    public Object getValue(float fraction) {
+        // Special-case optimization for the common case of only two keyframes
+        if (mNumKeyframes == 2) {
+            if (mInterpolator != null) {
+                fraction = mInterpolator.getInterpolation(fraction);
+            }
+            return mEvaluator.evaluate(fraction, mFirstKeyframe.getValue(),
+                    mLastKeyframe.getValue());
+        }
+        ···
+        ···
+        ···
+    }
+```
  mValues[i].setAnimatedValue(target);这段代码通过反射，更新了对象的属性值。<br/>
  接下来看android.animation.ValueAnimator.AnimationHandler#start方法。android.animation.ValueAnimator.AnimationHandler#mChoreographer调用android.animation.ValueAnimator.AnimationHandler#mAnimate,执行doAnimationFrame
 ```
@@ -423,7 +459,7 @@ IntPropertyValuesHolder继承了PropertyValuesHolder，构造方法调用父类�
                 }
             }
 ```
-android.animation.ValueAnimator.AnimationHandler#scheduleAnimation调用android.animation.ValueAnimator.AnimationHandler#mChoreographer#postCallback方法。android.animation.ValueAnimator.AnimationHandler#doAnimationFrame,通知界面android.animation.ValueAnimator#startAnimation<br/>,执行android.animation.ValueAnimator#animationFrame，调用android.animation.ValueAnimator#animateValue更新target的数据。
+android.animation.ValueAnimator.AnimationHandler#scheduleAnimation调用android.animation.ValueAnimator.AnimationHandler#mChoreographer#postCallback方法。android.animation.ValueAnimator.AnimationHandler#doAnimationFrame,通知界面android.animation.ValueAnimator#startAnimation<br/>,执行android.animation.ValueAnimator#animationFrame(在这调用插值器)，调用android.animation.ValueAnimator#animateValue更新target的数据。
 
 1.该方法执行android.animation.ValueAnimator.AnimationHandler#mPendingAnimations的所有动画;<br/>
 
