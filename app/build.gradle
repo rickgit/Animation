@@ -11,6 +11,14 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    sourceSets {
+//        main {
+//            manifest.srcFile 'src/main/AndroidManifest.xml'
+//            java.srcDirs = ['src/main/java']
+//            res.srcDirs = ['src/main/res']
+//            assets.srcDirs=['src/main/assets']
+//        }
+    }
     buildTypes {
         release {
             minifyEnabled false
