@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import edu.ptu.androidanimation.animation.AnimationFactory;
+import edu.ptu.androidanimation.graphics.PathUtils;
 
 public class AnimationActivity extends AppCompatActivity {
 
@@ -13,6 +14,7 @@ public class AnimationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation);
+        new PathUtils().getPosTan();
     }
     public void playAnim(View tvLabel){
         AnimationFactory animationFactory = new AnimationFactory();
