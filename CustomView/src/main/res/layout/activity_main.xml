@@ -11,7 +11,7 @@
     tools:context=".MainActivity">
 
     <edu.ptu.customview.CustomDrawView
-        android:layout_width="100dp"
+        android:layout_width="600dp"
         app:isShow="true"
-        android:layout_height="100dp"  />
+        android:layout_height="600dp"  />
 </RelativeLayout>

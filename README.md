@@ -538,6 +538,9 @@ canvas.drawBitmapMesh(mBitmap,
         mInhaleMesh.getHeight(),  
         mInhaleMesh.getVertices(),  
         0, null, 0, mPaint); 
+        
+###红心
+![红心](CustomView/doc/redheart.gif)
 ##Android 3D动画
 ###android.graphics.Camera
 
