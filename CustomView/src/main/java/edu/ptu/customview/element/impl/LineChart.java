@@ -1,9 +1,12 @@
 package edu.ptu.customview.element.impl;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
+import android.graphics.Shader;
 
 import edu.ptu.customview.element.IDrawElement;
 
@@ -75,6 +78,9 @@ public class LineChart implements IDrawElement {
         getNext();
         float[] pos = getPos();
         paint.setColor(0xffff0000);
+
+        Shader mShader = new LinearGradient(0,0,40,60,new int[] {Color.RED,Color.GREEN,Color.BLUE},null,Shader.TileMode.REPEAT);
+        paint.setShader(mShader);
 
         canvas.drawPath(getPath(), paint);
         paint.setColor(0xffffffff);
