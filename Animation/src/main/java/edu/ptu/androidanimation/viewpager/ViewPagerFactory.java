@@ -16,6 +16,7 @@ public class ViewPagerFactory {
         viewpager.setAdapter(new FragmentPagerAdapter(context.getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int i) {
+
                 return new ColorFragment();
             }
 
@@ -24,7 +25,7 @@ public class ViewPagerFactory {
                 return 10;
             }
         });
-        viewpager.setPageTransformer(true,new CustomTransformer());
+        viewpager.setPageTransformer(true, new CustomTransformer());
         return  viewpager;
     }
 }

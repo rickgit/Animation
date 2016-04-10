@@ -30,8 +30,17 @@ public class ColorFragment extends android.support.v4.app.Fragment {
         Random random = new Random();
         byte[] buf = new byte[3];
         random.nextBytes(buf);
-        textView.setBackgroundColor(0xff<<24&buf[0]<< 16 & buf[1] << 8 & buf[2]);
-        return textView;
+        int i = random.nextInt(1);
+        View view
+                = inflater.inflate(R.layout.animation_placehold, null);
+        if (i == 0) {
+            view.setBackgroundColor(0xffaaccff);
+        }else {
+            view.setBackgroundColor(0xffffccaa);
+        }
+
+//        textView.setBackgroundColor(0xff<<24&buf[0]<< 16 & buf[1] << 8 & buf[2]);
+        return view;
     }
 
 
