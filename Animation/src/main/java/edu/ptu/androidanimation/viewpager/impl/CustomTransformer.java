@@ -12,17 +12,15 @@ public class CustomTransformer implements PageTransformer {
     @Override
     public void transformPage(View view, float v) {
 //        v ∈{-1,1} v范围在-1到1之间
+        if (v > 1 || v < -1)
+            System.out.println("===> v " + v);
         if (v >= 0) {
-            int color = 0xff_ff_ff & (((byte) (0xff * v)) << 24);
-            view.setBackgroundColor(0xff00ff00);
+            int color = (((byte) (0xff * v) )|(0xff<<24));
             ViewCompat.animate(view).scaleX(1 - v).scaleY(1 - v).start();
-            view.setScaleX(1-v);
-        }
-        else {
-            v=Math.abs(v);
-            byte color = (byte) (0xff_ff_ff & ((0xff - (byte) (0xff * v)) & 0xff << 24));
+        } else {
+            v = Math.abs(v);
+            byte color = (byte) ((0xff<<24) |((byte)(0xff - (byte) (0xff * v))<<8));
             ViewCompat.animate(view).scaleX(1 - v).scaleY(1 - v).start();
-            view.setBackgroundColor(0xffff0000);
         }
     }
 }
