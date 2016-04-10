@@ -14,5 +14,8 @@
         android:animateLayoutChanges="true"
         android:layout_height="100dp"
         android:text="@string/hello_world" />
-
+    <android.support.v4.view.ViewPager
+        android:id="@+id/anim_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
 </RelativeLayout>

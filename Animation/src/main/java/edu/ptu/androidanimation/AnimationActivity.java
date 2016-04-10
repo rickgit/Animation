@@ -2,11 +2,13 @@ package edu.ptu.androidanimation;
 
 import android.animation.Animator;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import edu.ptu.androidanimation.animation.AnimationFactory;
 import edu.ptu.androidanimation.graphics.PathUtils;
+import edu.ptu.androidanimation.viewpager.ViewPagerFactory;
 
 public class AnimationActivity extends AppCompatActivity {
 
@@ -15,6 +17,8 @@ public class AnimationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation);
         new PathUtils().getPosTan();
+        ViewPager vp = (ViewPager) findViewById(R.id.anim_vp);
+        ViewPagerFactory.createViewpager(this,vp);
     }
     public void playAnim(View tvLabel){
         AnimationFactory animationFactory = new AnimationFactory();

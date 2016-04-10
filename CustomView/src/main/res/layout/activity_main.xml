@@ -1,17 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    android:background="@android:color/holo_blue_bright"
+    android:gravity="center"
+    android:orientation="vertical">
 
-    <edu.ptu.customview.CustomDrawView
-        android:layout_width="wrap_content"
-        app:isShow="true"
-        android:layout_height="wrap_content"  />
+    <!--<edu.ptu.customview.CustomDrawView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--app:isShow="true"-->
+    <!--android:layout_height="wrap_content"  />-->
+    <FrameLayout
+        android:layout_width="1080dp"
+        android:translationX="-100dp"
+        android:layout_height="match_parent">
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView2"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi2" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView3"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi3" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView4"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi4" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView5"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi5" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView6"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi6" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView7"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi7" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView8"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi8" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView9"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi9" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView10"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi10" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView11"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi11" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView12"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi12" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView13"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi13" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView14"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi14" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView15"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi15" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView16"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi16" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView17"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi17" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView18"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi18" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView19"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi19" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView20"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi20" />
+
+        <com.eftimoff.androipathview.PathView
+            android:id="@+id/pathView21"
+            android:layout_width="500dp"
+            android:layout_height="500dp"
+            app:pathColor="@android:color/white"
+            app:pathWidth="2dp"
+            app:svg="@raw/meizi21" />
+
+    </FrameLayout>
 </RelativeLayout>

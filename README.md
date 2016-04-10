@@ -527,20 +527,21 @@ android.animation.ValueAnimator#cancel，如果没有启动的animator，先执�
 ###android.view.Choreographer
 > 
 
+###ViewPager切换动画
 
-###吸入动画
+        
+###Path动画
+- svg ![红心](CustomView/doc/redheart.gif)
+- 吸入动画
 > Mesh表示网格，说得通俗一点，可以将画板想像成一张格子布，在这个张布上绘制图片。[Android 吸入动画效果详解](http://blog.csdn.net/leehong2005/article/details/9127095)
-###构建Mesh
+构建Mesh
 Path
 Canvas.drawBitmapMesh
-canvas.drawBitmapMesh(mBitmap,  
-        mInhaleMesh.getWidth(),  
-        mInhaleMesh.getHeight(),  
-        mInhaleMesh.getVertices(),  
-        0, null, 0, mPaint); 
-        
-###红心
-![红心](CustomView/doc/redheart.gif)
+canvas.drawBitmapMesh(mBitmap,
+        mInhaleMesh.getWidth(),
+        mInhaleMesh.getHeight(),
+        mInhaleMesh.getVertices(),
+        0, null, 0, mPaint);
 ##Android 3D动画
 ###android.graphics.Camera
 
