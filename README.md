@@ -537,12 +537,16 @@ android.animation.ValueAnimator#cancel，如果没有启动的animator，先执�
 构建Mesh
 Path
 Canvas.drawBitmapMesh
+``` java
 canvas.drawBitmapMesh(mBitmap,
         mInhaleMesh.getWidth(),
         mInhaleMesh.getHeight(),
         mInhaleMesh.getVertices(),
         0, null, 0, mPaint);
+```
+
 ##Android 3D动画
+
 ###android.graphics.Camera
 
 ##案例结构
