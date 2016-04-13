@@ -24,7 +24,7 @@ public class PathInfo implements IDrawElement {
 
     public PathInfo(){
         this.path=new Path();
-        int screenWidth=600;
+        int screenWidth=640;
         int[] controlPos1={0, 0};
         int[] controlPos2={0, (int) (screenWidth/3f*2)};
         int[] startPos={(int) (screenWidth/2.f), (int) (screenWidth/3f)};

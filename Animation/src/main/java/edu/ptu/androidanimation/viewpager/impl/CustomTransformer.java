@@ -16,11 +16,11 @@ public class CustomTransformer implements PageTransformer {
             System.out.println("===> v " + v);
         if (v >= 0) {
             int color = (((byte) (0xff * v) )|(0xff<<24));
-            ViewCompat.animate(view).scaleX(1 - v).scaleY(1 - v).start();
+            ViewCompat.animate(view).scaleX(1 - v/3).scaleY(1 - v/3).start();
         } else {
             v = Math.abs(v);
             byte color = (byte) ((0xff<<24) |((byte)(0xff - (byte) (0xff * v))<<8));
-            ViewCompat.animate(view).scaleX(1 - v).scaleY(1 - v).start();
+            ViewCompat.animate(view).scaleX(1 - v/3).scaleY(1 - v/3).start();
         }
     }
 }

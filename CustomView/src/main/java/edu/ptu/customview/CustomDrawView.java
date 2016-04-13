@@ -52,7 +52,7 @@ public class CustomDrawView extends View {
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-       setMeasuredDimension(widthMode==MeasureSpec.EXACTLY?widthSize:600,heightMode==MeasureSpec.EXACTLY?heightSize:600);
+       setMeasuredDimension(widthMode==MeasureSpec.EXACTLY?widthSize:640,heightMode==MeasureSpec.EXACTLY?heightSize:640);
     }
     public void initParams(){
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
