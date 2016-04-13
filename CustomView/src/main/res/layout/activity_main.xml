@@ -8,10 +8,11 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <!--<edu.ptu.customview.CustomDrawView-->
-    <!--android:layout_width="wrap_content"-->
-    <!--app:isShow="true"-->
-    <!--android:layout_height="wrap_content"  />-->
+    <edu.ptu.customview.CustomDrawView
+    android:layout_width="wrap_content"
+    app:isShow="true"
+    android:layout_height="wrap_content"  />
+    <!--
     <FrameLayout
         android:layout_width="1080dp"
         android:translationX="-100dp"
@@ -186,4 +187,5 @@
             app:svg="@raw/meizi21" />
 
     </FrameLayout>
+    -->
 </RelativeLayout>

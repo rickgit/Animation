@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.ptu.customview.element.IDrawElement;
-import edu.ptu.customview.element.impl.PathInfo;
+import edu.ptu.customview.element.impl.LineChart;
 
 /**该类主要作为容器，进行绘制图形。
  * Created by WangAnshu on 2016/3/28.
@@ -57,8 +57,8 @@ public class CustomDrawView extends View {
     public void initParams(){
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         oval = new RectF(0, 0, 600, 600);
-        pathInfo.add( new PathInfo());
-//        pathInfo.add( new LineChart());
+//        pathInfo.add( new PathInfo());
+        pathInfo.add( new LineChart());
     }
     @Override
     protected void onDraw(Canvas canvas) {
@@ -68,7 +68,7 @@ public class CustomDrawView extends View {
         for (IDrawElement item: pathInfo) {
             item.onDrawElement(canvas,paint);
         }
-        postDelayed(action, 25);
+//        postDelayed(action, 25);
     }
 
 

@@ -1,15 +1,9 @@
 package edu.ptu.customview;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.eftimoff.androipathview.PathView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,15 +13,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*
         pathView = (PathView) findViewById(R.id.pathView);
-//        pathView.getPathAnimator()
-//                .delay(100)
-//                .duration(5000)
-//                .listenerStart(new AnimationListenerStart())
-//                .listenerEnd(new AnimationListenerEnd())
-//                .interpolator(new AccelerateDecelerateInterpolator())
-//                .start();
-//        pathView.setFillAfter(true);
         final List<PathView> pathViews=new ArrayList<>(21);
         pathViews.add((PathView) findViewById(R.id.pathView));
         pathViews.add((PathView) findViewById(R.id.pathView2));
@@ -62,31 +49,18 @@ public class MainActivity extends AppCompatActivity {
                             interpolator(new AccelerateDecelerateInterpolator()).
                             start();
                 }
-                h.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
-                        pathView.performClick();
-                    }
-                },8000);
+//                h.postDelayed(new Runnable(){
+//
+//                    @Override
+//                    public void run() {
+//                        pathView.performClick();
+//                    }
+//                },8000);
 
 
             }
         });
-    }
-    Handler h=new Handler();
-
-    private class AnimationListenerStart implements PathView.AnimatorBuilder.ListenerStart {
-        @Override
-        public void onAnimationStart() {
-
-        }
+        */
     }
 
-    private class AnimationListenerEnd implements PathView.AnimatorBuilder.ListenerEnd {
-        @Override
-        public void onAnimationEnd() {
-
-        }
-    }
 }
