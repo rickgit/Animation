@@ -550,7 +550,7 @@ canvas.drawBitmapMesh(mBitmap,
 ###android.graphics.Camera
 
 ##案例结构
-[AnimationFactory.java](https://github.com/rickgit/animation/blob/master/app/src/main/java/edu/ptu/androidanimation/animation/AnimationFactory.java)
+[AnimationFactory.java](Animation/src/main/java/edu/ptu/androidanimation/animation/AnimationFactory.java)
 ```
 Animation
 |____src
