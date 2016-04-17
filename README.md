@@ -531,7 +531,9 @@ android.animation.ValueAnimator#cancel，如果没有启动的animator，先执�
 
         
 ###Path动画
+
 - svg ![红心](CustomView/doc/redheart.gif)
+ code [PathInfo.java](CustomView/src/main/java/edu/ptu/customview/element/impl/PathInfo.java)
 - 吸入动画
 > Mesh表示网格，说得通俗一点，可以将画板想像成一张格子布，在这个张布上绘制图片。[Android 吸入动画效果详解](http://blog.csdn.net/leehong2005/article/details/9127095)
 构建Mesh
