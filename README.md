@@ -552,13 +552,43 @@ canvas.drawBitmapMesh(mBitmap,
 ##案例结构
 [AnimationFactory.java](https://github.com/rickgit/animation/blob/master/app/src/main/java/edu/ptu/androidanimation/animation/AnimationFactory.java)
 ```
-app
-|____main
-| |____java
-| | |____edu
-| | | |____ptu
-| | | | |____androidanimation
-| | | | | |____AnimationActivity.java 
-| | | | | |____animation
-| | | | | | |____AnimationFactory.java 抽象工厂实现，可以返回ViewAnimation,AnimationDrawable,Animator动画类
+Animation
+|____src
+| |____main
+| | |____AndroidManifest.xml
+| | |____java
+| | | |____edu
+| | | | |____ptu
+| | | | | |____androidanimation
+| | | | | | |____AnimationActivity.java
+| | | | | | |____animation
+| | | | | | | |____AnimationFactory.java  #抽象工厂实现，可以返回ViewAnimation,AnimationDrawable,Animator动画类
+| | | | | | | |____CustomAnimation.java
+| | | | | | |____graphics
+| | | | | | | |____PathUtils.java
+| | | | | | |____viewpager
+| | | | | | | |____ColorFragment.java
+| | | | | | | |____impl
+| | | | | | | | |____CustomTransformer.java
+| | | | | | | |____ViewPagerFactory.java
+
+
+CustomView
+|____src
+| |____main
+| | |____AndroidManifest.xml
+| | |____java
+| | | |____edu
+| | | | |____ptu
+| | | | | |____customview
+| | | | | | |____CustomAbstractView.java
+| | | | | | |____CustomCompositeView.java
+| | | | | | |____MainActivity.java
+| | | | | | |____CustomDrawView.java
+| | | | | | |____element
+| | | | | | | |____impl  
+| | | | | | | | |____LineChart.java
+| | | | | | | | |____PathInfo.java    #绘图元素实现类，路径绘制( element implement)
+| | | | | | | |____IDrawElement.java  #绘图元素接口(drawable element interface)
+
 ```
