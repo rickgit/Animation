@@ -3,7 +3,7 @@
 [指由许多帧静止的画面，以一定的速度（如每秒16张）连续播放时，肉眼因视觉残象产生错觉，而误以为画面活动的作品。](https://zh.wikipedia.org/wiki/动画)。这是wiki百科的定义，但在实际开发中，手机是以每秒60帧进行绘制元素，保证动画的流畅度。
 
 ##Android 2D动画
-###补间动画(DrawableAnimation)
+###补间动画(AnimationDrawable)
 官方定义：加载一系列的Drawable，一个接着另一个，组成动画
 
 xml:
