@@ -1,9 +1,11 @@
 # 动画
-##定义
+## 定义
 [指由许多帧静止的画面，以一定的速度（如每秒16张）连续播放时，肉眼因视觉残象产生错觉，而误以为画面活动的作品。](https://zh.wikipedia.org/wiki/动画)。这是wiki百科的定义，但在实际开发中，手机是以每秒60帧进行绘制元素，保证动画的流畅度。
 
-##Android 2D动画
-###补间动画(AnimationDrawable)
+## 优化
+[動畫的12項基本法則](https://zh.wikipedia.org/wiki/%E5%8B%95%E7%95%AB%E7%9A%8412%E9%A0%85%E5%9F%BA%E6%9C%AC%E6%B3%95%E5%89%87)
+## Android 2D动画
+### 补间动画(AnimationDrawable)
 官方定义：加载一系列的Drawable，一个接着另一个，组成动画
 
 xml:
@@ -14,7 +16,7 @@ java:
 android.graphics.drawable.AnimationDrawable
 view.setBackgroundResource(R.drawable.animlist);
 
-####DrawableAnimation源码分析
+#### DrawableAnimation源码分析
 1.构造方法,默认构造方法没有state,res为null<br/>
 ```
     private AnimationDrawable(AnimationState state, Resources res) {
@@ -73,7 +75,7 @@ super.addChild(dr)，保存了drawable并设置为不可见，保存drawable是�
 ```
 selectDrawable根据上面的addFrame方法，可知frame为0，unscheduleSelf方法调用Drawable的消息回调接口。
 
-3.start方法
+3. start方法
 ```
     public void start() {
         mAnimating = true;
@@ -117,7 +119,7 @@ xml:
 java:
 android.view.animation.AnimationSet, android.view.animation.Animation, android.view.animation.AnimationUtils,<br/>
 android.view.animation.LayoutAnimationController 实现使多个控件按顺序一个一个的显示。
-####Animation源码分析
+#### Animation源码分析
 android.view.animation.Animation<br/>
 1. AlphaAnimation构造方法
 ```
@@ -271,7 +273,7 @@ android.view.animation.AlphaAnimation#applyTransformation
     }
 ```
 
-###属性动画(PropertyAnimation Android 3.0,API level 11)
+### 属性动画(PropertyAnimation Android 3.0,API level 11)
 官方定义：通过一段时间改变任何Object的属性形成动画
 TODO 插值器（Interpolator）和估值器（TypeEvaluator）分析
 ```
@@ -357,7 +359,7 @@ IntPropertyValuesHolder继承了PropertyValuesHolder，构造方法调用父类�
 4.android.animation.ValueAnimator#setEvaluator方法
 在Animator里只有ofApla方法和ofObject有用到，该方法根据设置mValues第一个元素PropertyValuesHolder的android.animation.PropertyValuesHolder#mEvaluator属性和步骤2.1的KeyframeSet的android.animation.KeyframeSet#mEvaluator属性。
 
-#####启动ObjectAnimator动画
+##### 启动ObjectAnimator动画
 1.android.animation.ObjectAnimator#start方法<br/>
 从android.animation.ValueAnimator#sAnimationHandler（java.lang.ThreadLocal）调用一个android.animation.ValueAnimator.AnimatorHandler（android.animation.ValueAnimator.AnimatorHandler）的类型的对象，保证每个线程有个对应的AnimationHandler，Animatiorndler用来循环动画的类。<br/>
 如果没从ThreadLocal获取到AnimationHandler，则android.animation.ValueAnimator#start()。<br/>
@@ -527,10 +529,10 @@ android.animation.ValueAnimator#cancel，如果没有启动的animator，先执�
 ###android.view.Choreographer
 > 
 
-###ViewPager切换动画
+### ViewPager切换动画
 
         
-###Path动画
+### Path动画
 
 - svg ![红心](CustomView/doc/redheart.gif)
  code [PathInfo.java](CustomView/src/main/java/edu/ptu/customview/element/impl/PathInfo.java)
@@ -551,7 +553,7 @@ canvas.drawBitmapMesh(mBitmap,
 
 ###android.graphics.Camera
 
-##案例结构
+## 案例结构
 [AnimationFactory.java](Animation/src/main/java/edu/ptu/androidanimation/animation/AnimationFactory.java)
 ```
 Animation
